@@ -1,4 +1,4 @@
-(executable
- (name ps8)
- (modules ps8)
+(executables
+ (names ps8_problem1 ps8_problem2)
+ (modules ps8_problem1 ps8_problem2)
  (libraries ps8_helpers owl-base))

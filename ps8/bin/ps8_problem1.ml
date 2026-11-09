@@ -20,7 +20,7 @@ let cutoff_freq = 100.0 (* Hz *)
 let gain = 10.0
 
 (* Problem 1, parts B-D. Uses owl-base and the Gnuplot executable.
-   Run from the project root: dune exec ./bin/ps8.exe
+   Run from the project root: dune exec ./bin/ps8_problem1.exe
    By default, plots are saved in the current working directory. An existing output
    directory can optionally be passed as the first command-line argument.
    Open the resulting SVG files in a browser; no Python or GUI is invoked.
