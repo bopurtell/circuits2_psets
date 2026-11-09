@@ -1,0 +1,4 @@
+(executable
+ (name ps8_code_ocaml)
+ (modules ps8_code_ocaml)
+ (libraries ps8_helpers owl-base))

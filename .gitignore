@@ -1,0 +1,7 @@
+/_build/
+**/_build/
+**/_opam/
+*.cmi
+*.cmo
+*.cmx
+*.o

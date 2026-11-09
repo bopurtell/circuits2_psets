@@ -1,0 +1,10 @@
+opam-version: "2.0"
+synopsis: "Circuits 2 problem set 8 filter comparison"
+maintainer: "Bohdan Purtell"
+authors: "Bohdan Purtell"
+build: [ ["dune" "build" "-p" name "-j" jobs] ]
+depends: [
+  "ocaml" {>= "4.12"}
+  "dune" {>= "3.16"}
+  "owl-base" {= "1.2"}
+]

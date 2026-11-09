@@ -1,0 +1,4 @@
+(library
+ (name ps8_helpers)
+ (modules numerics plot)
+ (libraries unix))
