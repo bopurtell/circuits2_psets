@@ -10,7 +10,7 @@ frequency at 100 Hz, matching SciPy's `norm="mag"`.
 circuits2_psets/
 └── ps8/
     ├── bin/
-    │   ├── ps8_code_ocaml.ml  # Executable entry point; filters and parts A–D
+    │   ├── ps8.ml             # Executable entry point; filters and parts A–D
     │   └── dune
     ├── lib/
     │   ├── numerics.ml        # Small numerical helpers
@@ -40,10 +40,10 @@ opam switch create . ocaml-system
 eval $(opam env)
 opam install . --deps-only
 dune build
-dune exec ./bin/ps8_code_ocaml.exe
+dune exec ./bin/ps8.exe
 ```
 
-For subsequent runs, use `dune exec ./bin/ps8_code_ocaml.exe` from this directory.
+For subsequent runs, use `dune exec ./bin/ps8.exe` from this directory.
 If using an already suitable switch instead, skip switch creation and just
 install the dependencies. Review Opam's proposed changes before approving;
 the existing OxCaml switch on the development machine proposed a large
@@ -55,7 +55,7 @@ to the current working directory. Open these files in a browser.
 An optional argument selects another existing output directory:
 
 ```sh
-dune exec ./bin/ps8_code_ocaml.exe -- /path/to/output
+dune exec ./bin/ps8.exe -- /path/to/output
 ```
 
 If Gnuplot is not on PATH, set `GNUPLOT` to its executable path.
@@ -69,7 +69,7 @@ OpenBLAS/LAPACKE libraries. The lighter `owl-base` package does not expose
 `linspace`, so a three-line helper remains. Phase unwrapping, the
 NumPy-compatible nonuniform gradient, polynomial evaluation, and RK4 are
 also kept together in `lib/numerics.ml`; the filter-specific ODE remains in
-`bin/ps8_code_ocaml.ml`. Step responses use RK4 rather than SciPy's matrix-exponential
+`bin/ps8.ml`. Step responses use RK4 rather than SciPy's matrix-exponential
 solver.
 
 Submit the source files, build configuration, and any desired plot outputs.
