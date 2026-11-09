@@ -8,14 +8,50 @@ Problem 2 designs a Butterworth band-pass filter using a fifth-order low-pass
 prototype (a tenth-degree band-pass denominator), with unity center gain,
 250 kHz lower cutoff and 1.5 MHz bandwidth. Both programs use OCaml, not MATLAB.
 
+## Plot results
+
+Plots are displayed below for grading; no installation or code execution is
+needed to view them. Click an image to open the full-size SVG.
+
+### Problem 1 — Butterworth vs. Bessel low-pass filters
+
+[Source code](bin/ps8_problem1.ml) · [Assignment](ps8_problems.pdf)
+
+#### Part B — Bode magnitude and phase
+
+Fourth-order filters with a 100 Hz cutoff and DC gain of 10.
+
+![Problem 1: Butterworth and Bessel Bode magnitude and phase plots](ps8_bode.svg)
+
+#### Part C — Group delay
+
+![Problem 1: Butterworth and Bessel group delay comparison](ps8_group_delay.svg)
+
+#### Part D — Step response
+
+Response to a 1 V step input; the final output is 10 V.
+
+![Problem 1: Butterworth and Bessel step response comparison](ps8_step_response.svg)
+
+### Problem 2 — Butterworth band-pass filter
+
+[Source code, including commented MATLAB version](bin/ps8_problem2.ml)
+
+#### Part B — Bode magnitude and phase
+
+Unity center gain, lower cutoff **250 kHz**, upper cutoff **1.75 MHz**, and
+center frequency **661.438 kHz**. The dashed line marks the center frequency.
+
+![Problem 2: Butterworth band-pass Bode magnitude and phase plots](ps8_problem2_bode.svg)
+
 ## Layout
 
 ```text
 circuits2_psets/
 └── ps8/
     ├── bin/
-     │   ├── ps8_problem1.ml    # Problem 1: filters and parts A–D
-     │   ├── ps8_problem2.ml    # Problem 2: band-pass transfer function and Bode plots
+    │   ├── ps8_problem1.ml    # Problem 1: filters and parts A–D
+    │   ├── ps8_problem2.ml    # Problem 2: band-pass transfer function and Bode plots
     │   └── dune
     ├── lib/
     │   ├── numerics.ml        # Small numerical helpers
@@ -73,7 +109,7 @@ to the installed Gnuplot program through `Unix`.
 
 The second executable writes **`ps8_problem2_bode.svg`**, with stacked magnitude
 (dB) and continuous phase (degrees) plots over 1 kHz–100 MHz. The dashed vertical
-line marks the center frequency. It also prints the factored transfer function,
+line marks the center frequency. It also prints the factored transfer function
 without MATLAB or Python.
 
 - Upper cutoff: `fc2 = fc1 + bandwidth = 1.75 MHz`.
@@ -86,8 +122,8 @@ without MATLAB or Python.
 The standard prototype-order convention doubles the polynomial degree under
 the band-pass transformation. The phase branch is +450° to −450°, passing
 through 0° at the center; adding any multiple of 360° gives equivalent phase.
-The assignment requests MATLAB code, but this implementation intentionally
-uses OCaml as requested.
+The implementation uses OCaml. A commented MATLAB equivalent is included at
+the bottom of `bin/ps8_problem2.ml` for reference; it has not been run.
 
 ## Why a few numerical helpers remain
 
